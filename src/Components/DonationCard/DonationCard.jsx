@@ -1,16 +1,19 @@
+import { Link } from "react-router-dom";
 
 
 const DonatedCard = ({ card }) => {
   return (
-    <div className="flex gap-6 bg-white shadow-lg rounded-lg  mb-4">
+    <div className="flex md:flex-row flex-col gap-6 bg-white shadow-lg rounded-lg  mb-4" style={{background: card.card_bg}}>
 
       <img src={card.picture} alt={card.title || "N/A"} />
       <div className="flex flex-col justify-center items-start">
-        <h2 className="text-xl font-semibold mb-2">{card.category || "N/A"}</h2>
-        <p className="text-gray-600 mb-4">{card.title || "N/A"}</p>
-        <p className="text-green-600 font-semibold ">{card.price || "N/A"}</p>
-        <button className="btn">Show Details</button>
-
+        <h2 className="text-xl px-3 rounded font-semibold mb-2" style={{color:card.text_color,
+        background:card.category_bg}}>{card.category || "N/A"}</h2>
+        <p  style={{color:card.text_color}} className=" font-semibold ">{card.title || "N/A"}</p>
+        <p style={{color:card.text_color}}  className=" font-semibold mb-4 ">${card.price || "N/A"}</p>
+        <Link to={`/category/${card.id}`}>
+        <button className="btn border-0 " style={{background: card.button_background, color: "white"}}>Show Details</button>
+        </Link>
       </div>
 
     </div>

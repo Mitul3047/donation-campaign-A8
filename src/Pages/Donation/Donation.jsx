@@ -1,5 +1,4 @@
-
-import  { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import DonatedCard from "../../Components/DonationCard/DonationCard";
 
 const Donation = () => {
@@ -12,12 +11,25 @@ const Donation = () => {
     setDonatedCards(storedCards);
   }, []);
 
+  const handleDeleteAll = () => {
+    // Clear the donated cards and remove them from local storage
+    setDonatedCards([]);
+    localStorage.removeItem("donatedCards");
+  };
+
   return (
     <div className="container mx-auto p-6">
       <h1 className="text-2xl font-semibold mb-4">Donation Page</h1>
+      {donatedCards.length > 0 && (
+        <div className="card-actions justify-end mb-4">
+          <button className="btn" onClick={handleDeleteAll}>
+            Delete All
+          </button>
+        </div>
+      )}
       <div>
         {donatedCards.length > 0 ? (
-          <div className="grid grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {showAll
               ? donatedCards.map((card, index) => (
                   <div key={index}>

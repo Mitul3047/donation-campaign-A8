@@ -10,7 +10,7 @@
     "button_background": "#214f7b", 
     "cover_picture": "https://i.ibb.co/6R2nnxw/health.png",
     "description": "Discover the secrets to a healthier lifestyle with this comprehensive guide. Learn about nutrition, exercise, and mental well-being to transform your life. Achieve a happier and healthier you with our expert advice and tips. Take the first step towards a better life today.",
-    "price": "$19.99"
+    "price": "19.99"
   },
   {
     "id": 2,
@@ -23,7 +23,7 @@
     "button_background": "#c73626",
     "cover_picture": "https://i.ibb.co/KzYjSyR/Education.png",
     "description": "Access a wide range of educational courses and resources online. Expand your knowledge and skills from the comfort of your home. Our platform offers a diverse selection of courses to help you achieve your educational goals.",
-    "price": "$29.99"
+    "price": "29.99"
   },
   {
     "id": 3,
@@ -36,7 +36,7 @@
     "button_background": "#c45e1d",
     "cover_picture": "https://i.ibb.co/LRPXW6g/cooking.png",
     "description": "Become a culinary expert with our cooking masterclass. Learn to prepare delicious dishes from around the world with step-by-step guidance. Unlock your inner chef and impress your friends and family with your culinary skills.",
-    "price": "$39.99"
+    "price": "39.99"
   },
   {
     "id": 4,
@@ -49,7 +49,7 @@
     "button_background": "#1d8c4b", 
     "cover_picture": "https://i.ibb.co/31svKPc/food.png",
     "description": "Indulge in a monthly selection of gourmet foods curated by top chefs. Experience the finest flavors from different cuisines. Each box is a culinary adventure waiting to be enjoyed.",
-    "price": "$49.99"
+    "price": "49.99"
   },
   {
     "id": 5,
@@ -62,7 +62,7 @@
     "button_background": "#214f7b",  
     "cover_picture": "https://i.ibb.co/6R2nnxw/health.png",
     "description": "Track your fitness goals and monitor your health with our advanced fitness tracker. Achieve your wellness objectives with ease. Stay motivated and on track with our cutting-edge technology.",
-    "price": "$59.99"
+    "price": "59.99"
   },
   {
     "id": 6,
@@ -75,7 +75,7 @@
     "button_background": "#c73626",  
     "cover_picture": "https://i.ibb.co/KzYjSyR/Education.png",
     "description": "Master a new language with our interactive language learning app. Start speaking fluently in no time. Our app offers a fun and effective way to learn languages.",
-    "price": "$19.99"
+    "price": "19.99"
   },
   {
     "id": 7,
@@ -88,7 +88,7 @@
     "button_background": "#c45e1d",  
     "cover_picture": "https://i.ibb.co/LRPXW6g/cooking.png",
     "description": "Get started with baking using our essential kit. Bake delicious cakes, cookies, and pastries like a pro. Our kit includes all the tools and ingredients you need to create culinary delights.",
-    "price": "$24.99"
+    "price": "24.99"
   },
   {
     "id": 8,
@@ -101,7 +101,7 @@
     "button_background": "#1d8c4b",  
     "cover_picture": "https://i.ibb.co/31svKPc/food.png",
     "description": "Subscribe to our organic food box for fresh, pesticide-free produce delivered to your doorstep every week. Enjoy the convenience of healthy eating with our subscription service.",
-    "price": "$34.99"
+    "price": "34.99"
   },
   {
     "id": 9,
@@ -114,7 +114,7 @@
     "button_background": "#214f7b",  
     "cover_picture": "https://i.ibb.co/6R2nnxw/health.png",
     "description": "Find inner peace and balance with our comprehensive yoga and meditation guide. Achieve mental and physical harmony. Discover the power of mindfulness and relaxation.",
-    "price": "$14.99"
+    "price": "14.99"
   },
   {
     "id": 10,
@@ -127,7 +127,7 @@
     "button_background": "#c73626",  
     "cover_picture": "https://i.ibb.co/KzYjSyR/Education.png",
     "description": "Become a coding expert with our intensive coding bootcamp. Land your dream job as a programmer. Our program offers hands-on experience and expert guidance.",
-    "price": "$199.99"
+    "price": "199.99"
   },
   {
     "id": 11,
@@ -140,7 +140,7 @@
     "button_background": "#c45e1d", 
     "cover_picture": "https://i.ibb.co/LRPXW6g/cooking.png",
     "description": "Cook delicious and nutritious meals with our collection of healthy cooking recipes. Improve your culinary skills. Our recipes are easy to follow and packed with flavor.",
-    "price": "$9.99"
+    "price": "9.99"
   },
   {
     "id": 12,
@@ -153,6 +153,6 @@
     "button_background": "#1d8c4b", 
     "cover_picture": "https://i.ibb.co/31svKPc/food.png",
     "description": "Embark on a wine-tasting journey with our expert sommeliers. Sample the finest wines from around the world. Enjoy an evening of sophistication and flavor.",
-    "price": "$79.99"
+    "price": "79.99"
   }
 ]
