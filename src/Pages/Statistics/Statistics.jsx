@@ -46,7 +46,7 @@ const Statistics = () => {
 
   return (
     <div>
-      <h1 className="text-2xl text-center">Donation Statistics</h1>
+      <h1 className="text-2xl  font-bold text-center mt-10">Donation Statistics</h1>
       {/* <ul>
         {donatedCards.map((card) => (
           <li key={card.id}>{card.price}</li>

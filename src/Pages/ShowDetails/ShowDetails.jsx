@@ -44,7 +44,7 @@ const ShowDetails = () => {
   return (
     <div className="flex flex-col justify-center w-11/12 mx-auto">
       <div className="relative">
-        <img src={category.cover_picture} alt={category.title} className="w-full h-[700px] mt-20" />
+        <img src={category.cover_picture} alt={category.title} className="w-full  md:h-[700px] mt-20" />
         <div className="p-9 absolute bottom-0 bg-black bg-opacity-50 w-full">
           <button className="btn w-44 text-white border-0" onClick={handleDonateClick} style={{background: category.text_color}}>
             Donate: ${category.price}

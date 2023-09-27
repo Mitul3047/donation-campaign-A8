@@ -1,24 +1,6 @@
-// import { useLoaderData } from "react-router-dom";
-// import Banner from "../../Components/Home/Banner/Banner";
-// import Categories from "../../Components/Home/Categories/Categories";
-// import { useState } from 'react';
-
-// const Home = () => {
-//   const allCategories = useLoaderData();
-//   const [filteredCategories, setFilteredCategories] = useState(allCategories); // Added state for filtered categories
-
-//   return (
-//     <div>
-//       <Banner categories={allCategories} setFilteredCategories={setFilteredCategories} /> {/* Pass all categories and setFilteredCategories */}
-//       <Categories categories={filteredCategories} /> {/* Pass filtered categories */}
-//     </div>
-//   );
-// };
-
-// export default Home;
 
 
-import React, { useState } from "react";
+import { useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import Banner from "../../Components/Home/Banner/Banner";
 import Categories from "../../Components/Home/Categories/Categories";

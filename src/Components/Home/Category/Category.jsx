@@ -7,12 +7,12 @@ const Category = ({ category }) => {
     return (
         <Link to={`/category/${id}`}>
             <div>
-                <div className="relative flex max-w-[24rem] flex-col rounded-xl bg-clip-border shadow-md" style={{background : card_bg}}>
-                    <div className="relative m-0 overflow-hidden rounded-none bg-transparent bg-clip-border  shadow-none">
+                <div className="flex  flex-col rounded-xl bg-clip-border shadow-md" style={{background : card_bg}}>
+                    <div className=" m-0  rounded-none bg-transparent bg-clip-border  shadow-none">
                         <img
                             src={picture}
                             alt={title}
-                            className='w-full'
+                            className='w-full   '
                         />
                     </div>
                     <div className="p-6 flex flex-col">
