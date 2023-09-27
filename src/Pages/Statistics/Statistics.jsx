@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { PieChart, Pie, Legend } from "recharts";
 
 const Statistics = () => {
@@ -6,80 +6,75 @@ const Statistics = () => {
   const [totalDonated, setTotalDonated] = useState(0);
   const [totalPrice, setTotalPrice] = useState(0);
   const [donatedPercentage, setDonatedPercentage] = useState(0);
-  const [pieChartData, setPieChartData] = useState([
-    { name: "Donated", value: donatedPercentage, fill: "green" },
-    { name: "Remaining", value: 100 - donatedPercentage, fill: "red" },
-  ]);
+  const [pieChartData, setPieChartData] = useState([]);
 
   useEffect(() => {
+    // Get donated cards from local storage
     const donatedCardsData = JSON.parse(localStorage.getItem("donatedCards")) || [];
-    setDonatedCards(donatedCardsData);
 
+    // Calculate total donated amount
     let totalDonated = 0;
-    for (const card of donatedCards) {
-      totalDonated += parseInt(card.price);
+    for (const card of donatedCardsData) {
+      totalDonated += parseFloat(card.price);
     }
 
-    setTotalDonated(totalDonated);
-
-    // Calculate the total price from the JSON data
+    // Fetch data from the JSON file
     fetch("/data.json")
       .then((response) => response.json())
       .then((data) => {
+        // Calculate total price from JSON data
         let totalPrice = 0;
         for (const card of data) {
           totalPrice += parseFloat(card.price);
         }
-        setTotalPrice(totalPrice);
 
-        // Calculate the donated percentage
+        // Calculate donated percentage
         const percentage = (totalDonated / totalPrice) * 100;
-        setDonatedPercentage(percentage.toFixed(2)); // Round to 2 decimal places
 
         // Update the pie chart data
-        setPieChartData([
-          { name: "Donated", value: percentage, fill: "green" },
-          { name: "Remaining", value: 100 - percentage, fill: "red" },
-        ]);
+        const updatedPieChartData = [
+          { name: "Donated", value: totalDonated, fill: "green" },
+          { name: "Remaining", value: totalPrice - totalDonated, fill: "red" },
+        ];
+
+        setDonatedCards(donatedCardsData);
+        setTotalDonated(totalDonated);
+        setTotalPrice(totalPrice);
+        setDonatedPercentage(percentage.toFixed(2));
+        setPieChartData(updatedPieChartData);
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
       });
-  }, [donatedCards]);
+  }, []); // Removed donatedCards from dependencies
 
   return (
     <div>
-      <h1 className="text-2xl  font-bold text-center mt-10">Donation Statistics</h1>
-      {/* <ul>
-        {donatedCards.map((card) => (
-          <li key={card.id}>{card.price}</li>
-        ))}
-      </ul>
-      <p>Total donated: ${totalDonated}</p>
-      <p>Total Price: ${totalPrice}</p>
-      <p>Percentage of Total donated: {donatedPercentage}%</p>
-      <p>Percentage of Total price: {(100 - donatedPercentage).toFixed(2)}%</p> */}
+      <h1 className="text-2xl font-bold text-center mt-10">Donation Statistics</h1>
       <div className="flex justify-center items-center h-[70vh]">
-      <PieChart width={400} height={400}>
-        <Pie
-          data={pieChartData}
-          cx={200}
-          cy={160}
-          innerRadius={0}
-          outerRadius={130}
-          paddingAngle={0}
-        />
-        <Legend
-          verticalAlign="top"
-          align="right"
-          wrapperStyle={{
-            position: "absolute",
-            bottom: 40,
-            right: 10,
-          }}
-          data={[
-            { name: "Donated", value: "green", type: "square" },
-            { name: "Remaining", value: "red", type: "square" },
-          ]}
-        />
-      </PieChart>
+        <PieChart width={400} height={400}>
+          <Pie
+            data={pieChartData}
+            cx={200}
+            cy={160}
+            innerRadius={0}
+            outerRadius={130}
+            paddingAngle={0}
+          />
+          <Legend
+            verticalAlign="top"
+            align="right"
+            wrapperStyle={{
+              position: "absolute",
+              bottom: 40,
+              right: 10,
+            }}
+            data={[
+              { name: "Donated", value: "green", type: "square" },
+              { name: "Remaining", value: "red", type: "square" },
+            ]}
+          />
+        </PieChart>
       </div>
     </div>
   );
